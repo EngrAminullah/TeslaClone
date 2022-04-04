@@ -3,7 +3,7 @@ import styles from "./styles";
 import { View, Text, ImageBackground } from "react-native";
 import { StyledButton } from "../StyledButton";
 
-const CarItem = (props) => {
+const CarItem = props => {
   return (
     <View style={styles.carContainer}>
       <ImageBackground
@@ -15,22 +15,23 @@ const CarItem = (props) => {
         <Text style={styles.title}>Model S</Text>
         <Text style={styles.subtitle}>Starting at $69,000</Text>
       </View>
+      <View style={styles.buttonsContainer}>
+        <StyledButton
+          type="primary"
+          content={"Custom Order"}
+          onPress={() => {
+            console.warn("Custom order was pressed");
+          }}
+        />
 
-      <StyledButton
-        type="primary"
-        content={"Custom Order"}
-        onPress={() => {
-          console.warn("Custom order was pressed");
-        }}
-      />
-
-      <StyledButton
-        type="secondary"
-        content={"Existing Inventory"}
-        onPress={() => {
-          console.warn("Existing Inventory was pressed");
-        }}
-      />
+        <StyledButton
+          type="secondary"
+          content={"Existing Inventory"}
+          onPress={() => {
+            console.warn("Existing Inventory was pressed");
+          }}
+        />
+      </View>
     </View>
   );
 };
